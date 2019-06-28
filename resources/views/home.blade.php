@@ -1,7 +1,6 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
-    
-</div>
+<h2>Welcome to AudiWallpapers.com</h2>
+
 @endsection

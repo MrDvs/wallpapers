@@ -24,7 +24,7 @@ class WallpaperController extends Controller
      */
     public function create()
     {
-        //
+        return view('wallpapers.create');
     }
 
     /**
@@ -35,7 +35,11 @@ class WallpaperController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     'wallpaper' => 'required|image',
+        //     'title' => 'Nullable|String',
+        //     'author' => 'Nullable|String',
+        // ]);
     }
 
     /**
