@@ -35,11 +35,13 @@ class WallpaperController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'wallpaper' => 'required|image',
-        //     'title' => 'Nullable|String',
-        //     'author' => 'Nullable|String',
-        // ]);
+        $request->validate([
+            'wallpaper' => 'required|image',
+            'title' => 'Nullable|String',
+            'author' => 'Nullable|String',
+        ]);
+
+        echo 'goed gedaan mien jong';
     }
 
     /**

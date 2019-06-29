@@ -3,7 +3,18 @@
 @section('content')
 <h2 class="text-center">Upload a wallpaper!</h2>
 
+@if ($errors->any())
+	<div class="alert alert-danger text-center">
+		<ul>
+			@foreach ($errors->all() as $error)
+				<h5>{{ $error }}</h5>
+			@endforeach
+		</ul>
+	</div>
+@endif
+
 <form method="POST" action="{{ route('upload.store') }}">
+	@csrf
   <div class="form-group">
     <label for="WallpaperFile">Upload your wallpaper *</label>
     <input type="file" class="form-control-file" id="WallpaperFile" name="wallpaper">

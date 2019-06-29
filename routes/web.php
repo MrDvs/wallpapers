@@ -27,4 +27,6 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/upload', 'WallpaperController@create')->name('upload');
 Route::post('/upload', 'WallpaperController@store')->name('upload.store');
 
+// Import route
+Route::get('/import', 'ImportController@importToDB')->name('import');
 
