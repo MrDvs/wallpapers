@@ -19,7 +19,7 @@
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #2e2e2e">
     <div id="app">
     	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -77,9 +77,11 @@
     	</nav>
 
     	<main class="py-4">
-            <div class="container">
+            {{-- <div class="container"> --}}
+                <div class="container-fluid clearfix" style="width: 1200px; padding: 0;">
                 @yield('content')
-            </div>
+                </div>
+            {{-- </div> --}}
     	</main>
     </div>
 </body>

@@ -16,8 +16,10 @@ class CreateWallpapersTable extends Migration
         Schema::create('wallpapers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('slug')->nullable();
             $table->string('file_location');
-            $table->string('author')->nullable()->default('Unknown');
+            $table->string('thumbnail_location');
+            $table->string('author')->default('Unknown');
             $table->string('user_id')->nullable();
             $table->string('format')->nullable();
             $table->string('resolution')->nullable();

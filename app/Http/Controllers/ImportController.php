@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Wallpaper;
 use Carbon\Carbon;
+use Image;
 
 class ImportController extends Controller
 {
@@ -33,6 +34,10 @@ class ImportController extends Controller
 			        echo $data[$c] . "<br />\n";
 			    }
 
+			    $img = Image::make('img/'.$data[2].'.jpg');
+			    $img->fit(293, 165);
+			    $img->save('img/thumbnail/t'.$data[2].'.jpg', 90);
+
 			    $replace = array("’", "_");
 			    $newValues = array(" ", " ");
 
@@ -40,6 +45,7 @@ class ImportController extends Controller
 			    $wallpaper->title = str_replace($replace, $newValues, $data[0]);
 			    $wallpaper->author = $data[1];
 			    $wallpaper->file_location = 'img/'.$data[2].'.jpg';
+			    $wallpaper->thumbnail_location = 'img/thumbnail/t'.$data[2].'.jpg';
 			    $wallpaper->created_at = Carbon::now();
 			    $wallpaper->updated_at = Carbon::now();
 			    $wallpaper->save();

@@ -50,9 +50,11 @@ class WallpaperController extends Controller
      * @param  \App\Wallpaper  $wallpaper
      * @return \Illuminate\Http\Response
      */
-    public function show(Wallpaper $wallpaper)
+    public function show($id)
     {
-        //
+        $wallpaper = Wallpaper::find($id);
+
+        return view('wallpapers.show', ['wallpaper' => $wallpaper]);
     }
 
     /**
