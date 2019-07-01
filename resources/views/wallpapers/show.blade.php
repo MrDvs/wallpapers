@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+{{$wallpaper->title}} | Audiwallpapers.com
+@endsection
+
 @section('content')
 
 <h2 class="text-center" style="color: #fff">{{$wallpaper->title}}</h2>
