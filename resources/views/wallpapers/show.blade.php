@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{$wallpaper->title}} | Audiwallpapers.com
+{{ utf8_decode($wallpaper->title) }} | Audiwallpapers.com
 @endsection
 
 @section('content')

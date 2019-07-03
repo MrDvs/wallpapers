@@ -24,6 +24,8 @@ class ImportController extends Controller
     // 		}
     // 	}
 
+    	// header("Content-Type: text/html; charset=ISO-8859-1");
+
     	$row = 1;
     	if (file_exists("../python/img_data.csv")) {
 			if (($handle = fopen("../python/img_data.csv", "r")) !== FALSE) {
@@ -34,15 +36,15 @@ class ImportController extends Controller
 			        echo $data[$c] . "<br />\n";
 			    }
 
-			    $img = Image::make('img/'.$data[2].'.jpg');
-			    $img->fit(293, 165);
-			    $img->save('img/thumbnail/t'.$data[2].'.jpg', 90);
+			    echo utf8_encode(str_replace('_', ' ', $data[0]));
+			    echo "<br><br>";
 
-			    $replace = array("’", "_");
-			    $newValues = array(" ", " ");
+			    // $img = Image::make('img/'.$data[2].'.jpg');
+			    // $img->fit(293, 165);
+			    // $img->save('img/thumbnail/t'.$data[2].'.jpg', 90);
 
 			    $wallpaper = new Wallpaper;
-			    $wallpaper->title = str_replace($replace, $newValues, $data[0]);
+			    $wallpaper->title = utf8_encode(str_replace('_', ' ', $data[0]));
 			    $wallpaper->author = $data[1];
 			    $wallpaper->file_location = 'img/'.$data[2].'.jpg';
 			    $wallpaper->thumbnail_location = 'img/thumbnail/t'.$data[2].'.jpg';
