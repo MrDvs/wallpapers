@@ -46,7 +46,7 @@
   display: block;
 }
 
-.overlay 
+.hover-overlay 
 {
   position: absolute;
   top: 0;
@@ -60,22 +60,22 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.thumbnail-overlay:hover .overlay 
+.thumbnail-overlay:hover .hover-overlay
 {
   opacity: 1;
 }
 
-.text 
+.overlay-text 
 {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .wallpaper-badge 
@@ -110,16 +110,35 @@
 }
 
 /* Wallpaper show */
+.wallpaper-title
+{
+    color: #fff;
+}
+
+.wallpaper-col
+{
+    padding: 0 !important;
+}
+
 .info-col 
 {
     padding: 0 !important;
 }
+
 .info-item:nth-child(odd) 
 {
     background-color: #4f4f4f;
 }
+
 .info-item 
 {
     padding: 5px;
     border-radius: 4px;
+    color: #fff; 
+    font-weight: bold;
+}
+
+.info-item h4
+{
+    color: #fff
 }

@@ -8,8 +8,8 @@
         <a href="{{route('wallpaper.show', ['id' => $wallpaper->id])}}" class="thumbnail-overlay">
             <span class="wallpaper-badge badge-{{$wallpaper->resolution}}">{{$wallpaper->resolution}}</span>
             <img src="{{asset($wallpaper->thumbnail_location)}}" class="wallpaper-thumbnail">
-            <div class="overlay">
-                <div class="text">{{$wallpaper->title}}</div>
+            <div class="hover-overlay">
+                <div class="overlay-text">{{$wallpaper->title}}</div>
             </div>
         </a>
     @endforeach

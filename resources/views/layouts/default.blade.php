@@ -27,7 +27,9 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/mobile.css') }}" rel="stylesheet">
+  {{-- FontAwesome --}}
+  <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 
 </head>
 <body style="background-color: #2e2e2e">
@@ -87,11 +89,11 @@
             </div>
     	</nav>
 
-    	<main class="py-4">
+    	{{-- <main class="py-4"> --}}
             <div class="container-fluid clearfix">
                 @yield('content')
             </div>
-    	</main>
+    	{{-- </main> --}}
     </div>
 </body>
 </html>

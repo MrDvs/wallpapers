@@ -1,0 +1,237 @@
+/* Main */
+.container-fluid {
+	width: 90%;
+	padding: 0;
+    margin: auto;
+}
+
+/* Home */
+
+.thumbnail-wrapper
+{
+}
+
+.thumbnail-overlay 
+{   
+
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    margin-bottom: 2%;
+    border-radius: 3px;
+}
+
+.wallpaper-thumbnail 
+{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-text
+{
+    display: none;
+}
+
+.wallpaper-badge 
+{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 0px #000000;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+/* Badge resolutions */
+.badge-720p 
+{
+    background-color: black;
+}
+.badge-1080p 
+{
+    background-color: blue;
+}
+.badge-1440p 
+{
+    background-color: #bda700;
+}
+
+.badge-4K
+{
+    background-color: #b03b00;
+}
+
+/* Wallpaper show */
+.wallpaper-title
+{
+    color: #fff;
+}
+
+.wallpaper-col
+{
+    padding: 0 !important;
+}
+
+.info-col 
+{
+    padding: 0 !important;
+}
+
+.info-item:nth-child(odd) 
+{
+    background-color: #4f4f4f;
+}
+
+.info-item 
+{
+    padding: 5px;
+    border-radius: 4px;
+    color: #fff; 
+    font-weight: bold;
+}
+
+.info-item h4
+{
+    color: #fff
+}
+
+@media (min-width: 360px) 
+{
+    .thumbnail-overlay 
+    {
+        float: left;
+        width: 49%;
+        margin-left: 0;
+        margin-right: 1%;
+        margin-bottom: 2%;
+    }
+
+    .thumbnail-overlay:nth-child(2n) 
+    {
+        margin-left: 1%;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 576px) 
+{
+    .thumbnail-overlay:hover
+    {
+        -moz-box-shadow: 0 0 10px #ccc;
+        -webkit-box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .hover-overlay 
+    {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .2s ease;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .thumbnail-overlay:hover .hover-overlay 
+    {
+      opacity: 1;
+    }
+
+    .overlay-text 
+    {
+        display: block;
+        color: white;
+        font-size: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) 
+{
+
+    .container-fluid
+    {
+        width: 690px;
+    }
+
+    .thumbnail-overlay 
+    {
+        float: left;
+        width: 223px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .thumbnail-overlay:nth-child(2n) 
+    {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .thumbnail-overlay:nth-child(3n) 
+    {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 992px) 
+{
+}
+
+@media (min-width: 1300px) 
+{
+
+    .container-fluid
+    {
+        width: 1200px;
+    }
+
+    .thumbnail-overlay 
+    {
+        float: left;
+        width: 292.5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .thumbnail-overlay:nth-child(2n) 
+    {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .thumbnail-overlay:nth-child(3n) 
+    {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .thumbnail-overlay:nth-child(4n) 
+    {
+        margin-right: 0 !important;
+    }
+
+}
+
+@media (min-width: 1921px) 
+{
+    .container-fluid
+    {
+        width: 90%;
+        max-width: 1805px;
+    }
+}

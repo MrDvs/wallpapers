@@ -61,9 +61,10 @@ class ImportController extends Controller
 
 			    echo "<br><br>";
 
-			    // $img = Image::make('img/'.$data[2].'.jpg');
-			    // $img->fit(293, 165);
-			    // $img->save('img/thumbnail/t'.$data[2].'.jpg', 90);
+			    $img = Image::make('img/'.$data[2].'.jpg');
+			    $img->fit(293, 165);
+			    // $img->fit(518, 291);
+			    $img->save('img/thumbnail/t'.$data[2].'.jpg', 90);
 
 			    $wallpaper = new Wallpaper;
 			    $wallpaper->title = utf8_encode(str_replace('_', ' ', $data[0]));
