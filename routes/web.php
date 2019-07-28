@@ -22,6 +22,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/test', 'HomeController@test');
 Route::get('/wallpaper/{id}', 'WallpaperController@show')->name('wallpaper.show');
 
 // upload routes

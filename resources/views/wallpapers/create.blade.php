@@ -14,6 +14,7 @@
 @endif
 
 <form method="POST" action="{{ route('upload.store') }}" enctype="multipart/form-data" style="background-color: #3A3F44; color: #fff; padding: 15px; border-radius: 10px">
+  <p class="text-center">Got a nice Audi wallpaper you want to share with the community? Upload it here!</p>
 	@csrf
   <div class="form-group">
     <label for="WallpaperFile">Upload your wallpaper *</label>
