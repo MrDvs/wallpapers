@@ -71,22 +71,51 @@
 }
 
 /* Wallpaper show */
-.wallpaper-title
+.show-container
+{
+    
+}
+
+.wallpaper-title,
+.wallpaper-info 
 {
     color: #fff;
+    word-break: break-word;
 }
 
 .wallpaper-wrapper
 {
     width: 100%;
+    /*background-color: #1c1c1c;*/
 }
 
 .wallpaper
 {
     display: block;
-    max-width: 100%; 
+    width: 100%; 
     height: auto;
     margin: auto;
+}
+
+.download-btn-wrapper
+{
+    margin: auto;
+}
+
+#download-btn
+{
+    width: 100%; 
+    margin: 10px 0;
+}
+
+.wallpaper-info 
+{
+    font-size: 1.3em;
+}
+
+span.bold
+{
+    font-weight: bold;
 }
 
 /*.wallpaper-col
