@@ -27,7 +27,7 @@
       {{-- <h6 id="TitleHelp" class="form-text text-muted" style="color: #fff !important">The title is optional</h6> --}}
     </div>
     <div class="form-group">
-      <label for="AuthorInput">Author (optional)</label>
+      <label for="AuthorInput">Author / username *</label>
       <input type="text" class="form-control" id="AuthorInput" aria-describedby="AuthorHelp" placeholder="@username" name="author">
       <h6 id="AuthorHelp" class="form-text text-muted" style="color: #fff !important">Who is the author of this file?</h6>
     </div>
@@ -40,6 +40,9 @@
       <label for="TagInput">Tags (optional)</label>
       <input type="text" class="form-control" id="AuthorInput" aria-describedby="TagHelp" placeholder="RS6, V8, Turbo, TFSI" name="tags">
       <h6 id="TagHelp" class="form-text text-muted" style="color: #fff !important">You can add multiple tags, seperated by a comma (RS6, V8, Turbo, TFSI)</h6>
+    </div>
+    <div class="form-group">
+      <input type="checkbox"> I agree that this image is mine, copyright free or that I have listed the rightfull author/owner of this image and that this image may be shared on third party services (Instagram, Reddit etc.).
     </div>
     <button type="submit" class="btn btn-primary" id="upload-form-submit">Submit</button>
   </form>

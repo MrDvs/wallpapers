@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="wallpaper-wrapper">
-	<img src="{{asset($wallpaper->file_location)}}" class="wallpaper">
+	<img src="{{asset(Storage::url('public/'.$wallpaper->file_location))}}" class="wallpaper">
 </div>
 
 <div class="container-fluid">
@@ -26,7 +26,7 @@
 		<h3 style="color: #fff">Recommended Wallpapers</h3>
 			@foreach($recommended as $img)
 				<a href="{{route('wallpaper.show', ['id' => $img->id])}}" class="recommended-overlay">
-					<img src="{{asset($img->file_location)}}" alt="{{$img->title}}">
+					<img src="{{asset(Storage::url('public/'.$img->file_location))}}" alt="{{$img->title}}">
 				</a>
 			@endforeach
 	</div>

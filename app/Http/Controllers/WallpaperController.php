@@ -76,6 +76,7 @@ class WallpaperController extends Controller
         $wallpaper = new Wallpaper;
         $wallpaper->title = request('title');
         $wallpaper->author = request('author');
+        $wallpaper->author_url = request('url');
         $wallpaper->file_location = $path[1];
         $wallpaper->thumbnail_location = 'thumbnails/t'.$path[1];
         $wallpaper->format = $imageFormat[0].'x'.$imageFormat[1];
