@@ -5,6 +5,17 @@
     margin: auto;
 }
 
+span.bold
+{
+    font-weight: bold;
+}
+
+/* Menu */
+.upload-btn
+{
+    color: #fff !important;
+}
+
 /* Home */
 
 .thumbnail-wrapper
@@ -86,14 +97,14 @@
 .wallpaper-wrapper
 {
     width: 100%;
-    /*background-color: #1c1c1c;*/
+    background-color: #1c1c1c;
 }
 
 .wallpaper
 {
     display: block;
-    width: 100%; 
-    height: auto;
+    max-width: 100%; 
+    max-height: 80vh;
     margin: auto;
 }
 
@@ -113,10 +124,45 @@
     font-size: 1.3em;
 }
 
-span.bold
+.recommended-wallpapers
 {
-    font-weight: bold;
+    text-align: center;
 }
+
+.recommended-overlay img
+{
+    width: 48%; 
+    height: auto;
+    padding: .5%;
+}
+
+/* Wallpaper Create */
+#upload-form
+{
+    background-color: #3A3F44; 
+    color: #fff; 
+    padding: 15px;
+    margin: 15px 5px;
+    border-radius: 10px
+}
+
+#upload-form-submit
+{
+    text-align: center;
+}
+
+/* Footer */
+footer
+{
+    background-color: #393F44;
+    color: #fff;
+}
+
+#copyright
+{
+    text-align: center;
+}
+
 
 /*.wallpaper-col
 {

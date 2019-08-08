@@ -35,7 +35,7 @@
 <body style="background-color: #2e2e2e">
     <div id="app">
     	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
+            {{-- <div class="container"> --}}
         	    <a class="navbar-brand" href="{{route('home')}}">Audi Wallpapers</a>
         	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             	    <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                         <a class="nav-item nav-link active" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" href="#">Categories</a>
                         {{-- <a class="nav-item nav-link" href="#">Pricing</a> --}}
-                        <a class="nav-item nav-link" href="{{route('upload')}}">Upload</a>
+                        <a class="nav-item nav-link upload-btn btn btn-primary" href="{{route('upload')}}">Upload</a>
             	    </div>
         	    
                     <!-- Left Side Of Navbar -->
@@ -54,8 +54,8 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                    {{-- <ul class="navbar-nav ml-auto">
+                        
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -84,9 +84,9 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                    </ul> --}}
                 </div>
-            </div>
+            {{-- </div> --}}
     	</nav>
 
     	{{-- <main class="py-4"> --}}
@@ -95,5 +95,25 @@
             
     	{{-- </main> --}}
     </div>
+
+{{--   <footer>
+    <div class="row">
+      <div class="col-md-4">
+        <h5>The Wallpaper Network</h5>
+        <ul>
+          <li>FerrariWallpapers.com</li>
+          <li>LamboWallpapers.com</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="https://www.instagram.com/_audiwallpapers" target="_blank">
+          <i class="fab fa-instagram"></i> @_audiwallpapers
+        </a>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <p id="copyright">&#9400;2019, www.audiwallpapers.com</p>
+  </footer> --}}
+
 </body>
 </html>

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use App\Wallpaper;
+use Image;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class WallpaperController extends Controller
 {
@@ -39,22 +42,24 @@ class WallpaperController extends Controller
         $request->validate([
             'wallpaper' => 'required|image',
             'title' => 'required|String',
-            'author' => 'Nullable|String',
+            'author' => 'required|String',
+            'url' => 'Nullable|String',
             'tags' => 'Nullable|String',
         ]);
 
-        echo 'goed gedaan mien jong';
+        // Request the uploaded wallpaper, save it to the public disk and split the filename+extension with the folder
+        $wallpaper = $request->file('wallpaper');
+        $path = explode('/', $wallpaper->store('public'));
 
-        $wallpaper = new Wallpaper;
-        $wallpaper->title = request('title');
-        $wallpaper->file_location = request('title');
-        $wallpaper->fthumbnail_location = request('title');
-        $wallpaper->save();
+        // Get the original image, make it smaller and save it as the thumbnail
+        $thumbnail = Image::make(Storage::get('public/'.$path[1]));
+        $thumbnail->fit(293, 165);
+        $thumbnail->save('../storage/app/public/thumbnails/t'.$path[1], 90);
 
+        // Get the width and height of the image
+        $imageFormat = getimagesize('../storage/app/public/'.$path[1]);
 
-
-        $imageFormat = getimagesize('img/'.$data[2].'.jpg');
-
+        // Pick the resolution
         $resolutions = [720, 1080 ,1440, 2160];
         $resolution = null;
         foreach ($resolutions as $item) {
@@ -62,29 +67,17 @@ class WallpaperController extends Controller
                 $resolution = $item;
             }
         }
-
         if ($resolution == 2160) {
             $resolution = '4K';
         } else {
             $resolution = $resolution.'p';
-        }    
-
-        // 720p = 1280 x 720
-        // 1080p = 1920 x 1080
-        // 1440p = 2560 x 1440
-        // 4K = 3840 x 2160
-
-        echo "<br><br>";
-
-        // $img = Image::make('img/'.$data[2].'.jpg');
-        // $img->fit(293, 165);
-        // $img->save('img/thumbnail/t'.$data[2].'.jpg', 90);
+        }
 
         $wallpaper = new Wallpaper;
-        $wallpaper->title = utf8_encode(str_replace('_', ' ', $data[0]));
-        $wallpaper->author = $data[1];
-        $wallpaper->file_location = 'img/'.$data[2].'.jpg';
-        $wallpaper->thumbnail_location = 'img/thumbnail/t'.$data[2].'.jpg';
+        $wallpaper->title = request('title');
+        $wallpaper->author = request('author');
+        $wallpaper->file_location = $path[1];
+        $wallpaper->thumbnail_location = 'thumbnails/t'.$path[1];
         $wallpaper->format = $imageFormat[0].'x'.$imageFormat[1];
         $wallpaper->resolution = $resolution;
         $wallpaper->created_at = Carbon::now();

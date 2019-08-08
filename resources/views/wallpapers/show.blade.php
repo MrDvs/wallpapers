@@ -23,14 +23,12 @@
 	<p class="wallpaper-info">Resolution: <span class="bold">{{$wallpaper->format}}</span></p>
 
 	<div class="recommended-wallpapers">
-		<h3 class="text-center" style="color: #fff">Recommended wallpapers</h3>
-		<div class="recommended-wrapper" style="columns: 1;">
-			<div style="margin: auto;">
+		<h3 style="color: #fff">Recommended Wallpapers</h3>
 			@foreach($recommended as $img)
-				<img src="{{asset($img->file_location)}}" alt="{{$img->title}}" style="width: 100%; height: auto;">
+				<a href="{{route('wallpaper.show', ['id' => $img->id])}}" class="recommended-overlay">
+					<img src="{{asset($img->file_location)}}" alt="{{$img->title}}">
+				</a>
 			@endforeach
-			</div>
-		</div>
 	</div>
 	
 </div>
