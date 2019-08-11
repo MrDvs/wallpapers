@@ -15,6 +15,8 @@
         @endif
     </title>
 
+  <meta name="description" content="The number one resource for Audi wallpapers">
+
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -42,10 +44,10 @@
         	    </button>
         	    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             	    <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="#">Categories</a>
+                        <a class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
+                        {{-- <a class="nav-item nav-link" href="#">Categories</a> --}}
                         {{-- <a class="nav-item nav-link" href="#">Pricing</a> --}}
-                        <a class="nav-item nav-link upload-btn btn btn-primary" href="{{route('upload')}}">Upload</a>
+                        <a class="nav-item nav-link upload-btn btn btn-primary {{ request()->is('/') ? 'active' : '' }}" href="{{route('upload')}}">Upload</a>
             	    </div>
         	    
                     <!-- Left Side Of Navbar -->

@@ -42,9 +42,12 @@ class WallpaperController extends Controller
         $request->validate([
             'wallpaper' => 'required|image',
             'title' => 'required|String',
+            'email' => 'required|email',
+            'email-notify' => 'Nullable',
             'author' => 'required|String',
             'url' => 'Nullable|String',
-            'tags' => 'Nullable|String',
+            'agree' => 'required',
+            // 'tags' => 'Nullable|String',
         ]);
 
         // Request the uploaded wallpaper, save it to the public disk and split the filename+extension with the folder
@@ -59,18 +62,23 @@ class WallpaperController extends Controller
         // Get the width and height of the image
         $imageFormat = getimagesize('../storage/app/public/'.$path[1]);
 
-        // Pick the resolution
-        $resolutions = [720, 1080 ,1440, 2160];
-        $resolution = null;
-        foreach ($resolutions as $item) {
-            if ($resolution === null || abs($imageFormat[1] - $resolution) > abs($item - $imageFormat[1])) {
-                $resolution = $item;
-            }
-        }
-        if ($resolution == 2160) {
-            $resolution = '4K';
+        // Check if the height is bigger then the width (to define if it's a mobile wallpaper)
+        if ($imageFormat[1] > $imageFormat[0]) {
+            $resolution = 'mobile';
         } else {
-            $resolution = $resolution.'p';
+            // Pick the resolution
+            $resolutions = [720, 1080 ,1440, 2160];
+            $resolution = null;
+            foreach ($resolutions as $item) {
+                if ($resolution === null || abs($imageFormat[1] - $resolution) > abs($item - $imageFormat[1])) {
+                    $resolution = $item;
+                }
+            }
+            if ($resolution == 2160) {
+                $resolution = '4K';
+            } else {
+                $resolution = $resolution.'p';
+            }
         }
 
         $wallpaper = new Wallpaper;
@@ -84,6 +92,8 @@ class WallpaperController extends Controller
         $wallpaper->created_at = Carbon::now();
         $wallpaper->updated_at = Carbon::now();
         $wallpaper->save();
+
+        return redirect('/wallpaper/'.$wallpaper->id);
         
     }
 

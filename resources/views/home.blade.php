@@ -7,7 +7,7 @@
 	<div class="thumbnail-wrapper clearfix" style="">
 	    @foreach($wallpapers as $wallpaper)
 	        <a href="{{route('wallpaper.show', ['id' => $wallpaper->id])}}" class="thumbnail-overlay">
-	            <span class="wallpaper-badge badge-{{$wallpaper->resolution}}">{{$wallpaper->resolution}}</span>
+	            <span class="wallpaper-badge badge-{{$wallpaper->resolution}}">{!! ($wallpaper->resolution == 'mobile') ? '<i class="fas fa-mobile-alt"></i>' : $wallpaper->resolution !!}</span>
 	            <img src="{{asset(Storage::url('public/'.$wallpaper->thumbnail_location))}}" class="wallpaper-thumbnail" alt="{{$wallpaper->title}}">
 	            <div class="hover-overlay">
 	                <div class="overlay-text">{{$wallpaper->title}}</div>

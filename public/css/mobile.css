@@ -76,6 +76,12 @@ span.bold
     background-color: #b03b00;
 }
 
+.badge-mobile
+{
+    background-color: #000;
+    font-size: 1.2em;
+}
+
 .pagination
 {
     justify-content: center!important;
