@@ -1,5 +1,10 @@
 @extends('layouts.default')
 
+@section('title')
+	Home | Audiwallpapers.com
+@endsection
+
+
 @section('content')
 <div class="container-fluid clearfix">
 	<h2 class="text-center" style="color: #fff">Welcome to AudiWallpapers.com</h2>

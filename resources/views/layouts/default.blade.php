@@ -96,26 +96,15 @@
                 @yield('content')
             
     	{{-- </main> --}}
+      <footer>
+        <div class="container text-center">
+          Got a nice Audi wallpaper you want to share with the community? Upload it <a href="{{url('upload')}}">here!</a><br>
+          <small>Copyright &copy; AudiWallpapers.com</small>
+        </div>
+      </footer>
     </div>
 
-{{--   <footer>
-    <div class="row">
-      <div class="col-md-4">
-        <h5>The Wallpaper Network</h5>
-        <ul>
-          <li>FerrariWallpapers.com</li>
-          <li>LamboWallpapers.com</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <a href="https://www.instagram.com/_audiwallpapers" target="_blank">
-          <i class="fab fa-instagram"></i> @_audiwallpapers
-        </a>
-      </div>
-      <div class="col-md-4"></div>
-    </div>
-    <p id="copyright">&#9400;2019, www.audiwallpapers.com</p>
-  </footer> --}}
+
 
 </body>
 </html>

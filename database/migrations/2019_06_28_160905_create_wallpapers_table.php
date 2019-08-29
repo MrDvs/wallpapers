@@ -19,7 +19,7 @@ class CreateWallpapersTable extends Migration
             $table->string('slug')->nullable();
             $table->string('file_location');
             $table->string('thumbnail_location');
-            $table->string('author')->default('Unknown');
+            $table->string('author')->nullable();
             $table->string('author_url')->nullable();
             $table->string('user_id')->nullable();
             $table->string('format')->nullable();

@@ -42,9 +42,8 @@ class WallpaperController extends Controller
         $request->validate([
             'wallpaper' => 'required|image',
             'title' => 'required|String',
-            'email' => 'required|email',
-            'email-notify' => 'Nullable',
-            'author' => 'required|String',
+            'email' => 'Nullable|email',
+            'author' => 'Nullable|String',
             'url' => 'Nullable|String',
             'agree' => 'required',
             // 'tags' => 'Nullable|String',

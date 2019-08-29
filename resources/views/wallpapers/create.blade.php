@@ -23,16 +23,8 @@
     </div>	
     <div class="form-group">
       <label for="TitleInput">Title *</label>
-      <input type="text" class="form-control" id="TitleInput" aria-describedby="TitleHelp" placeholder="Awesome RS6" name="title" value="{{old('title')}}">
+      <input type="text" class="form-control" id="TitleInput" aria-describedby="TitleHelp" placeholder="Awesome RS6" name="title" value="{{old('title')}}" maxlength="90">
       {{-- <h6 id="TitleHelp" class="form-text text-muted" style="color: #fff !important">The title is optional</h6> --}}
-    </div>
-    <div class="form-group">
-      <label for="AuthorInput">E-mail *</label>
-      <input type="text" class="form-control" id="EmailInput" aria-describedby="EmailHelp" placeholder="avarage@joe.com" name="email" value="{{old('email')}}">
-      <h6 id="EmailHelp" class="form-text text-muted" style="color: #fff !important">Your E-mail will never be shared with a third party.</h6>
-    </div>
-    <div class="form-group">
-      <input type="checkbox" name="email-notify" value="1" {{ (! empty(old('email-notify')) ? 'checked' : '') }}> Notify me by mail when this wallpaper gets uploaded.
     </div>
     <div class="form-group">
       <label for="AuthorInput">Author / username (optional)</label>
@@ -44,6 +36,14 @@
       <input type="text" class="form-control" id="UrlInput" aria-describedby="UrlHelp" placeholder="www.instagram.com/author" name="url"  value="{{old('url')}}">
       <h6 id="UrlHelp" class="form-text text-muted" style="color: #fff !important">Does the author have a website?</h6>
     </div>
+    <div class="form-group">
+      <label for="AuthorInput">E-mail (optional)</label>
+      <input type="text" class="form-control" id="EmailInput" aria-describedby="EmailHelp" placeholder="avarage@joe.com" name="email" value="{{old('email')}}">
+      <h6 id="EmailHelp" class="form-text text-muted" style="color: #fff !important">Enter your E-mail if you want to get notified when your wallpaper gets aproved. Your E-mail will never be shared with or seen by a third party.</h6>
+    </div>
+    {{-- <div class="form-group">
+      <input type="checkbox" name="email-notify" value="1" {{ (! empty(old('email-notify')) ? 'checked' : '') }}> Notify me by mail when this wallpaper gets uploaded.
+    </div> --}}
     {{-- <div class="form-group">
       <label for="TagInput">Tags (optional)</label>
       <input type="text" class="form-control" id="AuthorInput" aria-describedby="TagHelp" placeholder="RS6, V8, Turbo, TFSI" name="tags">
