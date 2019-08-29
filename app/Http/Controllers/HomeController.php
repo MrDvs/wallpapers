@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $wallpapers = Wallpaper::SimplePaginate(24);
+        $wallpapers = Wallpaper::where('approved', '1')->SimplePaginate(24);
         return view('home', ['wallpapers' => $wallpapers]);
     }
 

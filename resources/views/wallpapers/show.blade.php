@@ -4,7 +4,21 @@
 {{ utf8_decode($wallpaper->title) }} | Audiwallpapers.com
 @endsection
 
+@if(!$wallpaper->approved) 
+<style>
+	#download-btn:hover {
+		cursor: not-allowed;
+	}
+</style>
+@endif
+
 @section('content')
+
+@if(!$wallpaper->approved)
+<div class="alert alert-danger text-center">
+	<h5>This wallpaper has not been approved. This wallpaper is not visible to the public yet and can't be downloaded.</h5>
+</div>
+@endif
 
 <div class="wallpaper-wrapper">
 	<img src="{{asset(Storage::url('public/'.$wallpaper->file_location))}}" class="wallpaper">
@@ -12,7 +26,7 @@
 
 <div class="container-fluid">
 	<div class="download-btn-wrapper">
-		<a download="{{str_replace(' ', '_', $wallpaper->title) . 'wallpaper'}}" href="{{asset($wallpaper->file_location)}}" class="btn btn-primary" id="download-btn"><i class="fas fa-download"></i> Download</a>​​​​​​​​​​​​​​​​​​​​​​​​​​​
+		<a download="{{str_replace(' ', '_', $wallpaper->title) . 'wallpaper'}}" @if($wallpaper->approved) href="{{asset($wallpaper->file_location)}}" @endif class="btn btn-primary" id="download-btn"><i class="fas fa-download"></i> Download</a>​​​​​​​​​​​​​​​​​​​​​​​​​​​
 	</div>
 	<h4 class="wallpaper-title">{{$wallpaper->title}}</h4>
 
@@ -30,6 +44,22 @@
 				</a>
 			@endforeach
 	</div>
+
+	@if(!$wallpaper->approved)
+	<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+
+	<script>
+		(function($){
+		  $(document).on('contextmenu', 'img', function() {
+		      return false;
+		  })
+		})(jQuery);
+	</script>
+	@endif
+
 	
 </div>
 @endsection

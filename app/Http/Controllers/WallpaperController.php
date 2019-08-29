@@ -105,7 +105,7 @@ class WallpaperController extends Controller
     public function show($id)
     {
         $wallpaper = Wallpaper::find($id);
-        $recommended = Wallpaper::inRandomOrder()->take(4)->get();
+        $recommended = Wallpaper::where('approved', 1)->inRandomOrder()->take(4)->get();
 
         return view('wallpapers.show', ['wallpaper' => $wallpaper, 'recommended' => $recommended]);
     }

@@ -20,6 +20,7 @@
 // DELETE		/photos/{photo}			destroy		photos.destroy
 
 Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/test', 'HomeController@test');
@@ -31,4 +32,7 @@ Route::post('/upload', 'WallpaperController@store')->name('upload.store');
 
 // Import route
 Route::get('/import', 'ImportController@importToDB')->name('import');
+
+// Admin
+Route::get('/admin', 'AdminController@index')->name('admin');
 
