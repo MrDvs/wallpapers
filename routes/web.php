@@ -35,4 +35,5 @@ Route::get('/import', 'ImportController@importToDB')->name('import');
 
 // Admin
 Route::get('/admin', 'AdminController@index')->name('admin');
+Route::put('/approve/{id}', 'AdminController@approve')->name('admin.approve');
 

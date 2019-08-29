@@ -25,6 +25,7 @@ class CreateWallpapersTable extends Migration
             $table->string('format')->nullable();
             $table->string('resolution')->nullable();
             $table->string('approved')->default(0);
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

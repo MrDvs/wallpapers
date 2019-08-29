@@ -21,4 +21,15 @@ class AdminController extends Controller
     		return redirect('/');
     	}
     }
+
+    public function approve($id)
+    {
+    	if(Auth::user()->isAdmin) {
+    		$wallpaper = wallpaper::find($id);
+    		$wallpaper->approved = 1;
+    		$wallpaper->save();
+
+    		return redirect('/admin');
+    	}
+    }
 }

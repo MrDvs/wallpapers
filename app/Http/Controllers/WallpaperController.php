@@ -88,6 +88,9 @@ class WallpaperController extends Controller
         $wallpaper->thumbnail_location = 'thumbnails/t'.$path[1];
         $wallpaper->format = $imageFormat[0].'x'.$imageFormat[1];
         $wallpaper->resolution = $resolution;
+        if (null !== request('email')) {
+            $wallpaper->email = request('email');
+        }
         $wallpaper->created_at = Carbon::now();
         $wallpaper->updated_at = Carbon::now();
         $wallpaper->save();
