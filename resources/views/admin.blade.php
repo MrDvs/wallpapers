@@ -15,7 +15,7 @@
 		  </a>
 		  <div class="card-body">
 		    <h5 class="card-title">{{$wallpaper->title}}</h5>
-		    <p class="card-text">Author: {{$wallpaper->author}} <br> URL: {{$wallpaper->author_url}} <br> Email: {{$wallpaper->email}}</p>
+		    <p class="card-text">ID: {{$wallpaper->id}} <br> Author: {{$wallpaper->author}} <br> URL: {{$wallpaper->author_url}} <br> Email: {{$wallpaper->email}}</p>
 
 		    <a href="#" class="btn btn-success" onclick="event.preventDefault(); document.getElementById('approve-{{$wallpaper->id}}').submit();">Approve</a>
 
