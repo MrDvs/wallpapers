@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use App\Tag;
 use App\Wallpaper;
-use Image;
 use Carbon\Carbon;
+use App\Mail\NewWallpaper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class WallpaperController extends Controller
@@ -94,6 +96,9 @@ class WallpaperController extends Controller
         $wallpaper->created_at = Carbon::now();
         $wallpaper->updated_at = Carbon::now();
         $wallpaper->save();
+
+        Mail::to('1998dennis@live.nl')
+            ->send(new NewWallpaper($wallpaper));
 
         return redirect('/wallpaper/'.$wallpaper->id);
         
