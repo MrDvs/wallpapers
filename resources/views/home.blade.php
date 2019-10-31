@@ -7,9 +7,7 @@
 
 @section('content')
 <div class="container-fluid clearfix">
-	<h2 class="text-center" style="color: #fff">Welcome to AudiWallpapers.com</h2>
-
-	<div class="thumbnail-wrapper clearfix" style="">
+	<div class="thumbnail-wrapper clearfix" style="padding-top: 15px">
 	    @foreach($wallpapers as $wallpaper)
 	        <a href="{{route('wallpaper.show', ['id' => $wallpaper->id])}}" class="thumbnail-overlay">
 	            <span class="wallpaper-badge badge-{{$wallpaper->resolution}}">{!! ($wallpaper->resolution == 'mobile') ? '<i class="fas fa-mobile-alt"></i>' : $wallpaper->resolution !!}</span>
@@ -20,7 +18,6 @@
 	        </a>
 	    @endforeach
 	</div>
-
 	{{$wallpapers->links()}}
 </div>
 @endsection

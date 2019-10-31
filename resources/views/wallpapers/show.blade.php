@@ -26,7 +26,7 @@
 
 <div class="container-fluid">
 	<div class="download-btn-wrapper">
-		<a download="{{str_replace(' ', '_', $wallpaper->title) . 'wallpaper'}}" @if($wallpaper->approved) href="{{asset($wallpaper->file_location)}}" @endif class="btn btn-primary" id="download-btn"><i class="fas fa-download"></i> Download</a>​​​​​​​​​​​​​​​​​​​​​​​​​​​
+		<a download="{{str_replace(' ', '_', $wallpaper->title) . 'wallpaper'}}" @if($wallpaper->approved) href="{{asset('storage/'.$wallpaper->file_location)}}" @endif class="btn btn-primary" id="download-btn"><i class="fas fa-download"></i> Download</a>​​​​​​​​​​​​​​​​​​​​​​​​​​​
 	</div>
 	<h4 class="wallpaper-title">{{$wallpaper->title}}</h4>
 
